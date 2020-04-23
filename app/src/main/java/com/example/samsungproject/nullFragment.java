@@ -1,4 +1,4 @@
-package com.example.samsungproject.fragments;
+package com.example.samsungproject;
 
 import android.os.Bundle;
 
@@ -8,15 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.samsungproject.R;
 
-public class ProfileFragment extends Fragment {
+public class nullFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_profile, null);
         // Inflate the layout for this fragment
-        return v;
+        return inflater.inflate(R.layout.fragmnet_null, container, false);
     }
 }

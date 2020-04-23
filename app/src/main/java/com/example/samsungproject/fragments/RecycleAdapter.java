@@ -1,4 +1,5 @@
 package com.example.samsungproject.fragments;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,52 +8,53 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.samsungproject.Purpose;
+import com.example.samsungproject.Challenge;
+import com.example.samsungproject.Challenge;
 import com.example.samsungproject.R;
 
 import java.util.ArrayList;
 
 class RecycleAdapter extends RecyclerView.Adapter<ContactVH> {
-    final ArrayList<Purpose> purposeList;
+    final ArrayList<Challenge> challengeList;
 
-    public RecycleAdapter(ArrayList<Purpose> userList) {
-        this.purposeList = userList;
+    public RecycleAdapter(ArrayList<Challenge> userList) {
+        this.challengeList = userList;
     }
 
 
     @NonNull
     @Override
     public ContactVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View contactView = LayoutInflater.from(parent.getContext()).inflate(R.layout.purpose_view, parent, false);
+        View contactView = LayoutInflater.from(parent.getContext()).inflate(R.layout.challenge_view, parent, false);
         return new ContactVH(contactView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContactVH holder, int position) {
-        Purpose purpose = purposeList.get(position);
-        holder.bind(purpose);
+        Challenge challenge = challengeList.get(position);
+        holder.bind(challenge);
     }
 
     @Override
     public int getItemCount() {
-        return purposeList.size();
+        return challengeList.size();
     }
 }
 
 class ContactVH extends RecyclerView.ViewHolder {
-    TextView deadline, head, stat;
+    TextView name, duration, hard;
 
     public ContactVH(@NonNull View itemView) {
         super(itemView);
-        deadline = itemView.findViewById(R.id.deadline);
-        stat = itemView.findViewById(R.id.stat);
-        head = itemView.findViewById(R.id.head);
+        name = itemView.findViewById(R.id.name);
+        duration = itemView.findViewById(R.id.duration);
+        hard = itemView.findViewById(R.id.hard);
 
     }
 
-    public void bind(Purpose purpose) {
-        deadline.setText(purpose.deadline);
-        stat.setText(purpose.stat);
-        head.setText(purpose.head);
+    public void bind(Challenge challenge) {
+        name.setText(challenge.name);
+        duration.setText(challenge.day+" Дней");
+        hard.setText(challenge.hard+"");
     }
 }
