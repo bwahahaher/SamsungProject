@@ -8,12 +8,15 @@
     tools:context=".fragments.ChallengeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/challengeRecycle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/goalsRecycleView"
+        android:layout_width="337dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.783"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
