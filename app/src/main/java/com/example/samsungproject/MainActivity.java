@@ -31,47 +31,49 @@ public class MainActivity extends AppCompatActivity {
     public void fragment (View view){
         Fragment fragment1 = null;
         TextView t;
-
-
-
         t=findViewById(R.id.header);
-        int a;
-        ImageButton btn;
+        int fire1 = R.drawable.fire;
+        int fire2 = R.drawable.fire2;
+        int goals1 = R.drawable.goals;
+        int add2 = R.drawable.add2;
+        int add1 = R.drawable.add1;
+        int goals2 = R.drawable.goals2;
+        int profile1 = R.drawable.profileimg1;
+        int profile2 = R.drawable.profileimg2;
+        int home1 = R.drawable.home1;
+        int home2 = R.drawable.home2;
+        ImageButton calendar = findViewById(R.id.calendar);
+        ImageButton mainButton = findViewById(R.id.mainButton);
+        ImageButton profile = findViewById(R.id.profile);
+        ImageButton challenge = findViewById(R.id.challenge);
+        ImageButton new_act = findViewById(R.id.new_act);
+
+
         switch (view.getId()){
             case R.id.calendar:
                 fragment1=new CalendarFragment();
                 t.setText("Будущие цели");
-                 a = Integer.parseInt("R.drawable.goals" + "1");
-                btn = findViewById(R.id.calendar);
-                setImg(btn, a);
+                setImg(calendar, goals1);
                 break;
             case R.id.mainButton:
                 fragment1=new MainFragment();
                 t.setText("Главная");
-                a = Integer.parseInt("R.drawable.home" + "1");
-                btn = findViewById(R.id.mainButton);
-                setImg(btn, a);
+                setImg(mainButton, home1);
                 break;
             case R.id.profile:
                 fragment1 = new ProfileFragment();
                 t.setText("Профиль");
-                a = Integer.parseInt("R.drawable.profileimg" + "1");
-                btn = findViewById(R.id.profile);
-                setImg(btn, a);
+                setImg(profile, profile1);
                 break;
             case R.id.challenge:
                 fragment1 = new ChallengeFragment();
                 t.setText("Челленджи");
-                a = R.drawable.fire;
-                btn = findViewById(R.id.challenge);
-                setImg(btn, a);
+                setImg(challenge, fire1);
                 break;
             case R.id.new_act:
                 fragment1 = new AddGoalsFragment();
                 t.setText("Добавить");
-                a = R.drawable.home2;
-                btn = findViewById(R.id.mainButton);
-                setImg(btn, a);
+                setImg(new_act, add1);
                 break;
 
         }
@@ -83,15 +85,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void setImg(ImageButton btn, int dr){
-//        ImageButton calendar = findViewById(R.id.calendar);
-//        ImageButton mainButton = findViewById(R.id.mainButton);
-//        ImageButton profile = findViewById(R.id.profile);
-//        ImageButton challenge = findViewById(R.id.challenge);
-//
-//        mainButton.setImageResource(R.drawable.home2);
-//        profile.setImageResource(R.drawable.profileimg1);
-//        challenge.setImageResource(R.drawable.fire2);
-//        calendar.setImageResource(R.drawable.goals2);
-//        btn.setImageResource(dr);
+        int fire1 = R.drawable.fire;
+        int fire2 = R.drawable.fire2;
+        int goals1 = R.drawable.goals;
+        int add2 = R.drawable.add2;
+        int goals2 = R.drawable.goals2;
+        int profile1 = R.drawable.profileimg1;
+        int profile2 = R.drawable.profileimg2;
+        int home1 = R.drawable.home1;
+        int home2 = R.drawable.home2;
+        ImageButton calendar = findViewById(R.id.calendar);
+        ImageButton mainButton = findViewById(R.id.mainButton);
+        ImageButton profile = findViewById(R.id.profile);
+        ImageButton challenge = findViewById(R.id.challenge);
+        ImageButton new_act = findViewById(R.id.new_act);
+        calendar.setImageResource(goals2);
+        mainButton.setImageResource(home2);
+        profile.setImageResource(profile2);
+        challenge.setImageResource(fire2);
+        new_act.setImageResource(add2);
+        btn.setImageResource(dr);
     }
 }

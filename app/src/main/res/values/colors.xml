@@ -5,5 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorBack">#000D23</color>
     <color name="colorOr">#FF6E40</color>
+<!--    <color name="colorOr">#0086db</color>-->
+<!--    <color name="colorBack">#0086db</color>-->
 
 </resources>

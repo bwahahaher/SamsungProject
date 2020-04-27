@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="160dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_width="414dp"
+            android:layout_height="70dp"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="2dp">
 
@@ -25,10 +26,11 @@
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="275dp"
+                android:layout_width="288dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Название"
+                android:textColor="#FFFFFF"
                 android:textSize="30sp" />
 
             <TextView
@@ -36,18 +38,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
-                android:text="10 дней" />
+                android:text="10 дней"
+                android:textSize="24sp" />
 
         </LinearLayout>
 
         <Button
             android:id="@+id/challBut"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:background="#FF6E40"
+            android:layout_width="414dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
             android:gravity="center"
-            android:text="Button"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            android:text="Принять вызов"
+            android:textColor="#FF6E40"
+            android:textSize="22sp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:layout_editor_absoluteX="0dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
