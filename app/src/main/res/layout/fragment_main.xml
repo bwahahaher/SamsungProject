@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#001333"
-    tools:context=".main_fragment" >
+    android:background="@color/colorBack"
+    tools:context=".main_fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
