@@ -14,16 +14,17 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="0dp">
 
         <fragment
             android:id="@+id/fragment"
             android:name="com.example.samsungproject.fragments.nullFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="64dp"
+            android:layout_height="626dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="2dp" />
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="5dp" />
 
         <TextView
             android:id="@+id/header"
@@ -33,79 +34,100 @@
             android:layout_marginLeft="52dp"
             android:layout_marginTop="8dp"
             android:paddingTop="10dp"
-            android:text="Главная"
+            android:text="Мой день"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/createChallenge"
+            android:layout_width="66dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:onClick="newChallenge"
+            android:padding="0px"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icons8__96" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:background="@color/threeBack"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/new_act"
             android:layout_width="83dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
             android:onClick="fragment"
             android:padding="0px"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/add2" />
+            app:srcCompat="@drawable/add1" />
 
         <ImageButton
             android:id="@+id/calendar"
             android:layout_width="83dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="fragment"
             android:background="@null"
+            android:onClick="fragment"
             android:padding="0px"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/goals2" />
+            app:srcCompat="@drawable/goals" />
+
         <ImageButton
             android:id="@+id/mainButton"
             android:layout_width="83dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@null"
             android:onClick="fragment"
             android:padding="0px"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/home1" />
-
+            app:srcCompat="@drawable/home" />
 
 
         <ImageButton
             android:id="@+id/challenge"
             android:layout_width="83dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@null"
             android:onClick="fragment"
             android:padding="0px"
             android:scaleType="fitCenter"
-            android:background="@null"
             android:text="челл"
             app:srcCompat="@drawable/fire2" />
 
         <ImageButton
             android:id="@+id/profile"
             android:layout_width="83dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@null"
             android:onClick="fragment"
             android:padding="0px"
             android:scaleType="fitCenter"
-            android:background="@null"
-            app:srcCompat="@drawable/profileimg2" />
-
+            app:srcCompat="@drawable/profileimg1" />
 
 
     </LinearLayout>

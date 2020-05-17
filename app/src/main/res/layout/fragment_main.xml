@@ -4,23 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBack"
+    android:background="@color/colorOr"
     tools:context=".main_fragment">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="520dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213"
+        tools:layout_editor_absoluteX="16dp">
 
-        <TextView
-            android:id="@+id/goals"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="Твои цели на сегодня"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

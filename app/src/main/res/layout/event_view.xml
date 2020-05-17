@@ -53,12 +53,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="127dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/icons8___96" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -77,10 +71,10 @@
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.02"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+                        app:layout_constraintVertical_bias="0.235" />
 
                     <TextView
                         android:id="@+id/hard"
@@ -92,16 +86,6 @@
                         app:layout_constraintStart_toEndOf="@+id/duration"
                         tools:layout_editor_absoluteY="0dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <Button
-                    android:id="@+id/challBut"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:text="Принять вызов"
-                    android:textColor="#FF6E40"
-                    android:textSize="16sp" />
 
             </LinearLayout>
 

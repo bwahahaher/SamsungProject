@@ -13,12 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.samsungproject.Challenge;
 import com.example.samsungproject.Challenge;
 import com.example.samsungproject.ChallengeInfo;
+import com.example.samsungproject.Event;
 import com.example.samsungproject.MainActivity;
 import com.example.samsungproject.R;
 
 import java.util.ArrayList;
 
-class RecycleAdapter extends RecyclerView.Adapter<ContactVH> {
+public class RecycleAdapter extends RecyclerView.Adapter<ContactVH> {
     final ArrayList<Challenge> challengeList;
 
     public RecycleAdapter(ArrayList<Challenge> userList) {
@@ -44,7 +45,6 @@ class RecycleAdapter extends RecyclerView.Adapter<ContactVH> {
         return challengeList.size();
     }
 }
-
 class ContactVH extends RecyclerView.ViewHolder {
     TextView name, duration, hard;
     Button btn;
