@@ -52,15 +52,13 @@ class EventHelp extends RecyclerView.ViewHolder {
 
     public EventHelp(@NonNull View itemView) {
         super(itemView);
-        name = itemView.findViewById(R.id.name);
-        duration = itemView.findViewById(R.id.duration);
-        hard = itemView.findViewById(R.id.hard);
-        btn=itemView.findViewById(R.id.challBut);
+        name = itemView.findViewById(R.id.eventName);
+        duration = itemView.findViewById(R.id.deadline);
+
 
     }
     public void bind(final Event challenge) {
         name.setText(challenge.name);
-        duration.setText(challenge.imp+" Дней");
-        hard.setText(challenge.hard+"");
+
         }
     }

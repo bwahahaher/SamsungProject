@@ -37,8 +37,6 @@ public class ChallengeInfo extends AppCompatActivity {
         hardView.setText(hardView.getText() + "" + challenge.hard);
         TextView days = findViewById(R.id.deadline);
         days.setText(days.getText() + "" + challenge.day + "дней");
-        TextView descriptionView = findViewById(R.id.descriptionV);
-        descriptionView.setText(descriptionView.getText() + challenge.description);
 
 
     }

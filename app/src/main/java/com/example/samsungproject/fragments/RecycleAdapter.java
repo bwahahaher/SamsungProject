@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,7 +48,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<ContactVH> {
     }
 }
 class ContactVH extends RecyclerView.ViewHolder {
-    TextView name, duration, hard;
+    TextView name, duration;
+    ImageView hard;
     Button btn;
 
     public ContactVH(@NonNull View itemView) {
@@ -61,7 +64,7 @@ class ContactVH extends RecyclerView.ViewHolder {
     public void bind(final Challenge challenge) {
         name.setText(challenge.name);
         duration.setText(challenge.day+" Дней");
-        hard.setText(challenge.hard+"");
+        hard.setImageResource(R.drawable.one);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent addActIntent = new Intent(v.getContext(), ChallengeInfo.class);

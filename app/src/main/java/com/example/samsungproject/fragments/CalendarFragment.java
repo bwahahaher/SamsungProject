@@ -58,6 +58,7 @@ public class CalendarFragment extends Fragment {
                 d = DateFormat.getDateInstance().format(date);
                 ArrayList<Event> challengeList = new ArrayList();
                 challengeList.add(new Event(1,"1,7","3",3, 3, 2, 3));
+                challengeList.add(new Event(1,"1,7","3",3, 3, 2, 3));
                 CalendarAdapter adapter = new CalendarAdapter(challengeList);
                 RecyclerView purposeList = v.findViewById(R.id.rec);
                 purposeList.setLayoutManager(new GridLayoutManager(v.getContext(), 1));
