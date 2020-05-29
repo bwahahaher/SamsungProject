@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -21,6 +23,7 @@ import com.example.samsungproject.fragments.CalendarFragment;
 import com.example.samsungproject.fragments.ChallengeFragment;
 import com.example.samsungproject.fragments.MainFragment;
 import com.example.samsungproject.fragments.ProfileFragment;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
@@ -36,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.fragment, fragment1);
-        ft.commit();
+//        ft.commit();
+//        DBHelper dbHelper;
+//        dbHelper = new DBHelper(this);
+//        SQLiteDatabase database = dbHelper.getWritableDatabase();
+//        ContentValues contentValues = new ContentValues();
+//        dbHelper.onUpgrade(database, 2,3);
     }
 
 
@@ -45,10 +53,8 @@ public class MainActivity extends AppCompatActivity {
         TextView t;
         t=findViewById(R.id.header);
         ImageButton calendar = findViewById(R.id.calendar);
-        ImageButton profile = findViewById(R.id.profile);
         ImageButton mainButton = findViewById(R.id.mainButton);
         ImageButton challenge = findViewById(R.id.challenge);
-        ImageButton new_act = findViewById(R.id.new_act);
         ImageButton add = findViewById(R.id.createChallenge);
         switch (view.getId()){
             case R.id.calendar:
@@ -63,26 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 setImg(mainButton);
                 add.setVisibility(View.GONE);
                 break;
-            case R.id.profile:
-                fragment1 = new ProfileFragment();
-                t.setText("Профиль");
-                setImg(profile);
-                add.setVisibility(View.GONE);
-                break;
             case R.id.challenge:
                 fragment1 = new ChallengeFragment();
-                t.setText("Челленджи");
+                t.setText("Мои челленджи");
                 setImg(challenge);
                 add.setVisibility(View.VISIBLE);
                 challenge.setImageResource(R.drawable.fire);
                 break;
-            case R.id.new_act:
-                fragment1 = new AddGoalsFragment();
-                t.setText("Добавить");
-                setImg(new_act);
-                add.setVisibility(View.GONE);
-                break;
-
         }
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
@@ -99,13 +92,9 @@ public class MainActivity extends AppCompatActivity {
     public void setImg(ImageButton btn){
         ImageButton calendar = findViewById(R.id.calendar);
         ImageButton mainButton = findViewById(R.id.mainButton);
-        ImageButton profile = findViewById(R.id.profile);
         ImageButton challenge = findViewById(R.id.challenge);
-        ImageButton new_act = findViewById(R.id.new_act);
         calendar.setColorFilter(ContextCompat.getColor(this, R.color.black), android.graphics.PorterDuff.Mode.MULTIPLY);
         mainButton.setColorFilter(ContextCompat.getColor(this, R.color.black), android.graphics.PorterDuff.Mode.MULTIPLY);
-        profile.setColorFilter(ContextCompat.getColor(this, R.color.black), android.graphics.PorterDuff.Mode.MULTIPLY);
-        new_act.setColorFilter(ContextCompat.getColor(this, R.color.black), android.graphics.PorterDuff.Mode.MULTIPLY);
         btn.setColorFilter(ContextCompat.getColor(this, R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
         challenge.setImageResource(R.drawable.fire2);
     }

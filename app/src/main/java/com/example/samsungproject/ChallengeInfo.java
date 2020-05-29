@@ -4,18 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.samsungproject.fragments.ChallengeFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class ChallengeInfo extends AppCompatActivity {
 
@@ -27,16 +20,20 @@ public class ChallengeInfo extends AppCompatActivity {
         Intent getIntent = getIntent();
         String name = getIntent.getStringExtra("name");
         String description = getIntent.getStringExtra("descr");
-        int hard = getIntent.getIntExtra("hard", 3);
+        String day = getIntent.getStringExtra("day");
+        int hard = getIntent.getIntExtra("hard", R.drawable.three);
         int id = getIntent.getIntExtra("id", 3);
-        int day = getIntent.getIntExtra("day", 3);
-        Challenge challenge  = new Challenge(id,day,hard, name, description);
-        TextView nameView = findViewById(R.id.name);
-        nameView.setText(challenge.name);
-        TextView hardView = findViewById(R.id.hard);
-        hardView.setText(hardView.getText() + "" + challenge.hard);
+        int progress = getIntent.getIntExtra("progress", 1);
+        TextView nameView = findViewById(R.id.nameLayout);
+        nameView.setText(name);
+        TextView descr = findViewById(R.id.descr);
+        descr.setText("Описание: "+description);
+        ImageView imgHard = findViewById(R.id.imgHard);
+        imgHard.setImageResource(hard);
         TextView days = findViewById(R.id.deadline);
-        days.setText(days.getText() + "" + challenge.day + "дней");
+        days.setText(day);
+        TextView prog = findViewById(R.id.progress);
+        prog.setText("Прогресс: "+progress);
 
 
     }

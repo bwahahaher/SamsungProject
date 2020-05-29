@@ -1,22 +1,24 @@
 package com.example.samsungproject.fragments;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.TextView;
+import android.widget.Button;
 
 import com.example.samsungproject.Challenge;
+import com.example.samsungproject.DBHelper;
 import com.example.samsungproject.Event;
 import com.example.samsungproject.R;
-import com.example.samsungproject.UsersInteractor;
+import com.example.samsungproject.newdayplan;
 
 import java.util.ArrayList;
 
@@ -26,15 +28,61 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, null);
-        ArrayList<Event> a = new ArrayList();
-        ArrayList<Challenge> challengeList = new ArrayList();
+        Button btn = v.findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent addActIntent = new Intent(getContext(), newdayplan.class);
+                getContext().startActivity(addActIntent);
+            }
+        });
+        ArrayList<Challenge> a = new ArrayList();
         //Получение из БД, пока что исскуственно
-        for (int te=0; te<15; te++) {
-            a.add(new Event(1, "namenamenamenamenamenamenamename", "descr", 1, 2, 2, 3));
-            challengeList.add(new Challenge(1, 2, 3, "cnamenamenamenameh", "descr"));
+        DBHelper dbHelper = new DBHelper(getContext());
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
+        ArrayList<Challenge> challengeList = new ArrayList();
+        Cursor cursor = database.query("MyDay", null, null, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            int idIndex = cursor.getColumnIndex("id");
+            int nameIndex = cursor.getColumnIndex("name");
+            int timeIndex = cursor.getColumnIndex("time");
+            int statIndex = cursor.getColumnIndex("stat");
+            do {
+                int id = cursor.getInt(idIndex);
+                String time =  cursor.getString(timeIndex);
+                String name =  cursor.getString(nameIndex);
+                int stat = cursor.getInt(statIndex);
+                a.add(new Challenge(id,time,stat, name, "descr", 1));
+
+            } while (cursor.moveToNext());
         }
+
+
+
+        cursor = database.query("Challenges", null, null, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            int idIndex = cursor.getColumnIndex("id");
+            int nameIndex = cursor.getColumnIndex("name");
+            int hardIndex = cursor.getColumnIndex("hard");
+            int longIndex = cursor.getColumnIndex("long");
+            int descrIndex = cursor.getColumnIndex("descr");
+            int proIndex = cursor.getColumnIndex("progress");
+            do {
+                int id = cursor.getInt(idIndex);
+                String lon =  cursor.getString(longIndex);
+                int hard =  cursor.getInt(hardIndex);
+                String descr =  cursor.getString(descrIndex);
+                String name =  cursor.getString(nameIndex);
+                int progress =  cursor.getInt(proIndex);
+                challengeList.add(new Challenge(id,lon,hard, name, descr, progress));
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
         ArrayList<EventView> eventView = new ArrayList<EventView>();
-        for(Event x: a){
+        for(Challenge x: a){
             eventView.add(new EventView((x.name), "event"));
         }
         for(Challenge b: challengeList){

@@ -19,4 +19,5 @@ public class nullFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_null, null);
         return v;
     }
+
 }

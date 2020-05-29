@@ -1,5 +1,6 @@
 package com.example.samsungproject.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
-import com.example.samsungproject.Challenge;
 import com.example.samsungproject.Event;
 import com.example.samsungproject.R;
-import com.example.samsungproject.UsersInteractor;
+import com.example.samsungproject.newdayplan;
+import com.example.samsungproject.newplan;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -32,7 +33,13 @@ public class CalendarFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_calendar, null);
         HorizontalCalendar horizontalCalendar;
-
+        Button btn = v.findViewById(R.id.FloatingActionButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent addActIntent = new Intent(getContext(), newdayplan.class);
+                getContext().startActivity(addActIntent);
+            }
+        });
         Calendar endDate = Calendar.getInstance();
         endDate.add(Calendar.MONTH, 1);
         Calendar startDate = Calendar.getInstance();
@@ -57,8 +64,26 @@ public class CalendarFragment extends Fragment {
                 String d;
                 d = DateFormat.getDateInstance().format(date);
                 ArrayList<Event> challengeList = new ArrayList();
-                challengeList.add(new Event(1,"1,7","3",3, 3, 2, 3));
-                challengeList.add(new Event(1,"1,7","3",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Заплатить за интернет","Весь день",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Сдача проекта","15:00",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Занятия в самсунге","16:20",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Встреча с Ваней","18:30",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Сдача проекта","15:00",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Занятия в самсунге","16:20",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Встреча с Ваней","18:30",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Сдача проекта","15:00",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Занятия в самсунге","16:20",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Встреча с Ваней","18:30",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Сдача проекта","15:00",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Занятия в самсунге","16:20",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Встреча с Ваней","18:30",3, 3, 2, 3));challengeList.add(new Event(1,"Сдача проекта","15:00",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Занятия в самсунге","16:20",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Встреча с Ваней","18:30",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Сдача проекта","15:00",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Занятия в самсунге","16:20",3, 3, 2, 3));
+                challengeList.add(new Event(1,"Встреча с Ваней","18:30",3, 3, 2, 3));
+
+
                 CalendarAdapter adapter = new CalendarAdapter(challengeList);
                 RecyclerView purposeList = v.findViewById(R.id.rec);
                 purposeList.setLayoutManager(new GridLayoutManager(v.getContext(), 1));

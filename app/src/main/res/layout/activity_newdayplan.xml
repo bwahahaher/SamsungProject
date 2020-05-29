@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    tools:context=".MeetingEditForm">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="417dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameLayout">
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="104dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal|left|center_vertical"
+            android:hint="Время"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/timeText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.28">
+
+            <Button
+                android:id="@+id/TimeBt"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="87dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="left|center_vertical"
+                android:padding="0dp"
+                android:text="Выбрать"
+                android:textColor="#C5C5C5"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/checkBox3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="98dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="left|center_vertical"
+                android:text="Весь день"
+                android:textColor="#C5C5C5"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/checkBox2"
+                app:layout_constraintTop_toBottomOf="@+id/TimeBt" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="36dp"
+        android:hint="Название активности"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/names"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:textSize="30sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Добавить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

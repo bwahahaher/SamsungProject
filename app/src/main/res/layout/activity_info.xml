@@ -36,7 +36,7 @@
         tools:ignore="OnClick" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/nameLayout"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
@@ -56,11 +56,13 @@
         android:id="@+id/hard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
         android:gravity="left"
         android:text="Трудность: "
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,60 +72,58 @@
         android:id="@+id/deadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
         android:text="Время выполнения: "
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hard" />
 
     <ScrollView
         android:id="@+id/scrollView5"
-        android:layout_width="403dp"
-        android:layout_height="348dp"
-        android:layout_marginTop="108dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="351dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.096">
+        app:layout_constraintTop_toBottomOf="@+id/progress">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/descr"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/descr"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:gravity="start"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="179dp"
-                    android:layout_height="38dp"
-                    android:gravity="start|top"
-                    android:hint="Заметка / Описание" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content"
+            android:text="Описание: "
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
     </ScrollView>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="424dp"
-        android:layout_height="67dp"
-        android:text="Принять"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+    <ImageView
+        android:id="@+id/imgHard"
+        android:layout_width="41dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/hard"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/def" />
+
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="20dp"
+        android:text="Прогресс: "
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/deadline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.samsungproject"
-    >
+    package="com.example.samsungproject">
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".newdayplan"></activity>
+        <activity android:name=".newplan" />
+        <activity
+            android:name=".usachevlongread"
+            android:label="@string/title_activity_usachevlongread"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".longread"
+            android:label="@string/title_activity_longread"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".twodaysrule"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/NoActionBar" />
         <activity android:name=".addChallenge" />
         <activity
             android:name=".ChallengeInfo"

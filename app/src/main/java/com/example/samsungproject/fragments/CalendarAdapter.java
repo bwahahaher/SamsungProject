@@ -59,6 +59,6 @@ class EventHelp extends RecyclerView.ViewHolder {
     }
     public void bind(final Event challenge) {
         name.setText(challenge.name);
-
+        duration.setText(challenge.descr);
         }
     }

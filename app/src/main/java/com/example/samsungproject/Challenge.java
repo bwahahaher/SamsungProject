@@ -1,13 +1,16 @@
 package com.example.samsungproject;
 
 public class Challenge {
-    public int day, hard, id;
-    public String name, description;
-    public Challenge(int id, int day, int hard,  String name, String description) {
+    public int  hard, id;
+    public String name, description,day;
+    public int progress;
+
+    public Challenge(int id, String day, int hard, String name, String description, int progress) {
         this.day = day;
         this.hard = hard;
         this.id = id;
         this.name = name;
+        this.progress = progress;
         this.description=description;
     }
 }
